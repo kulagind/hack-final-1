@@ -1,0 +1,115 @@
+@use '~@angular/material' as mat;
+@include mat.core();
+
+$primary-palette: (
+  50: #ffffff,
+  100: #fafafa,
+  200: #f5f5f5,
+  300: #f0f0f0,
+  400: #dedede,
+  500: #c2c2c2,
+  600: #979797,
+  700: #818181,
+  800: #606060,
+  900: #3c3c3c,
+  A100: #a7ffeb,
+  A200: #64ffda,
+  A400: #1de9b6,
+  A700: #00bfa5,
+  contrast: (
+    50: transparentize(#000, 0.2),
+    100: transparentize(#000, 0.2),
+    200: transparentize(#000, 0.2),
+    300: transparentize(#000, 0.87),
+    400: transparentize(#000, 0.87),
+    500: transparentize(#fff, 0.87),
+    600: transparentize(#fff, 0.87),
+    700: transparentize(#fff, 0.87),
+    800: transparentize(#fff, 0.87),
+    900: transparentize(#fff, 0.87),
+    A100: opacify(#fff, 0.87),
+    A200: opacify(#fff, 0.87),
+    A400: opacify(#fff, 0.87),
+    A700: opacify(#000, 0.87),
+  ),
+);
+
+$accent-palette: (
+  50: #c8fff4,
+  100: #70efde,
+  200: #03dac5,
+  300: #00c4b4,
+  400: #00b3a6,
+  500: #01a299,
+  600: #019592,
+  700: #018786,
+  800: #017374,
+  900: #005457,
+  A100: #89fffd,
+  A200: #56fffd,
+  A400: #23fffc,
+  A700: #00f3f8,
+  contrast: (
+    50: opacify(#000, 0.87),
+    100: opacify(#000, 0.87),
+    200: opacify(#000, 0.87),
+    300: opacify(#000, 0.87),
+    400: opacify(#000, 0.87),
+    500: opacify(#fff, 0.87),
+    600: opacify(#fff, 0.87),
+    700: opacify(#fff, 0.87),
+    800: opacify(#fff, 0.87),
+    900: opacify(#fff, 0.87),
+    A100: opacify(#000, 0.87),
+    A200: opacify(#000, 0.87),
+    A400: opacify(#000, 0.87),
+    A700: opacify(#000, 0.87),
+  ),
+);
+
+$warn-palette: (
+  50: #f9edef,
+  100: #f1d1d7,
+  200: #e7b3bc,
+  300: #dd94a1,
+  400: #d67d8d,
+  500: #cf6679,
+  600: #ca5e71,
+  700: #c35366,
+  800: #bd495c,
+  900: #b23849,
+  A100: #fffdfd,
+  A200: #ffcad1,
+  A400: #ff97a5,
+  A700: #ff7e8f,
+  contrast: (
+    50: opacify(#000, 0.87),
+    100: opacify(#000, 0.87),
+    200: opacify(#000, 0.87),
+    300: opacify(#000, 0.87),
+    400: opacify(#000, 0.87),
+    500: opacify(#000, 0.87),
+    600: opacify(#000, 0.87),
+    700: opacify(#fff, 0.87),
+    800: opacify(#fff, 0.87),
+    900: opacify(#fff, 0.87),
+    A100: opacify(#000, 0.87),
+    A200: opacify(#000, 0.87),
+    A400: opacify(#000, 0.87),
+    A700: opacify(#000, 0.87),
+  ),
+);
+
+$custom-primary: mat.define-palette($primary-palette, 200, 100, 700);
+$custom-accent: mat.define-palette($accent-palette, 200, 100, 200);
+$custom-warn: mat.define-palette($warn-palette);
+
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-accent,
+    warn: $custom-warn,
+  )
+));
+
+@include mat.all-component-themes($custom-theme);

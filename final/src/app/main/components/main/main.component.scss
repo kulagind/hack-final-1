@@ -1,0 +1,94 @@
+@import "src/styles";
+
+:host {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 130px;
+  background: radial-gradient(47.59% 47.59% at 47.27% 97.59%, #15161A 0%, #1C1D21 100%);
+}
+
+.drone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 33%;
+  height: 85%;
+
+  &-description {
+    &-headline {
+      @include headline-4($on-surface-1);
+      margin-bottom: 0;
+    }
+
+    &-subtitle {
+      @include subtitle-1($on-surface-3);
+      margin-bottom: 30px;
+    }
+
+    &-body {
+      @include body-2($on-surface-2);
+      width: 70%;
+      margin-bottom: 45px;
+    }
+  }
+}
+
+.text {
+  width: 33%;
+  padding: 70px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  width: 33%;
+  padding: 70px 0;
+}
+
+.secondary-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &-subtitle {
+    width: 100%;
+    @include body-2($on-surface-3);
+    margin-bottom: 35px;
+
+  }
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+
+  &-headline-6 {
+    @include subtitle-1($on-surface-1);
+  }
+
+  &-body {
+    @include body-2($on-surface-2);
+  }
+}
+
+.logo {
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.133333px;
+  color: rgba(255, 255, 255, 0.87);
+
+}

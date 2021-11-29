@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@use '~@angular/material' as mat;
+@include mat.core();
+@import 'themes/default-theme.styles';
+@import 'styles/typography';
+@import 'styles/colors';
+
+$on-surface-1: transparentize(#fff, 0);
+$on-surface-2: transparentize(#fff, 0.40);
+$on-surface-3: transparentize(#fff, 0.62);
+
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
