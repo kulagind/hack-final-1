@@ -5,3 +5,10 @@
 .image {
   width: 650px;
 }
+
+.shadow {
+  width: 70%;
+  height: 44px;
+  margin-left: 100px;
+  background: radial-gradient(50% 50% at 50% 50%, #101213 0%, rgba(16, 18, 19, 0) 100%);
+}
