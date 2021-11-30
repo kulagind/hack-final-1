@@ -4,7 +4,11 @@ import { MainComponent } from './main/components/main/main.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'main' },
-  { path: 'main', component: MainComponent }
+  { path: 'main', component: MainComponent },
+  {
+    path: 'practice',
+    loadChildren: () => import("./practice/practice.module").then(({PracticeModule}) => PracticeModule),
+  }
 ];
 
 @NgModule({
