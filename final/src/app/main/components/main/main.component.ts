@@ -25,7 +25,8 @@ export class MainComponent {
   }
 
   handleStart(): void {
-    this.router.navigate(['../practice']);
+    this.router.navigate(['../practice']).then(() => {
+    });
   }
 
 }

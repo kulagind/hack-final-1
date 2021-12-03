@@ -6,7 +6,7 @@ import { ConnectionLostOverlayComponent } from './connection-lost-overlay/connec
 @NgModule({
   declarations: [
     SimulatorComponent,
-    ConnectionLostOverlayComponent
+    ConnectionLostOverlayComponent,
   ],
   imports: [
     CommonModule,

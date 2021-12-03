@@ -1,0 +1,47 @@
+<div class="information">
+
+  <h1 class="information__title">
+    ПОЛЁТ ОКОНЧЕН
+  </h1>
+
+  <ul class="statistics" *ngIf="stats$ | async as stats">
+    <li class="statistics__item">
+      <span>Максимальная скорость: </span>
+      <span>{{stats.max_speed}}</span>
+    </li>
+    <li class="statistics__item">
+      <span>Количество опасных сближений: </span>
+      <span>{{stats.danger_close}}</span>
+    </li>
+    <li class="statistics__item">
+      <span>Количество ударов: </span>
+      <span>{{stats.hits}}</span>
+    </li>
+    <li class="statistics__item">
+      <span>Потери сигнала: </span>
+      <span>{{stats.connection_losses}}</span>
+    </li>
+    <li class="statistics__item">
+      <span>Максимальная высота: </span>
+      <span>{{stats.max_height}}</span>
+    </li>
+    <li class="statistics__item">
+      <span>Общее время: </span>
+      <span>{{(stats.time / 1000).toFixed(0) + " сек"}}</span>
+    </li>
+    <li class="statistics__item">
+      <span>Статус: </span>
+      <span>{{stats.status === 'fail' ? 'Провал' : 'Успех'}}</span>
+    </li>
+    <li class="statistics__item statistics__item_final">
+      <span>Балл: </span>
+      <span>{{stats.points.toFixed(0)}}</span>
+    </li>
+  </ul>
+
+  <div class="information__controls">
+    <button mat-raised-button [style.margin-right]="'30px'" (click)="handleRestart()"> Перезапустить </button>
+    <button mat-raised-button (click)="handleMainPage()"> На главную </button>
+  </div>
+
+</div>

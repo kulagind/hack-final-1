@@ -7,14 +7,14 @@
     </div>
     <div class="drone-value__item">
       <h3>{{(speed$ | async) || 0}} KM</h3>
-      <div>Max speed</div>
+      <div>Скорость</div>
     </div>
   </div>
 
   <div class="drone-value">
     <div class="drone-value__item">
       <h3>
-        Power
+        Батарея
       </h3>
       <app-drone-state-bar [percentage]="power$ | async"></app-drone-state-bar>
     </div>
@@ -23,9 +23,10 @@
   <div class="drone-value">
     <div class="drone-value__item">
       <h3>
-        Health
+        Ресурс
       </h3>
-      <app-drone-state-bar [percentage]="50"></app-drone-state-bar>
+      <app-drone-state-bar [percentage]="gameService.healthPoints$ | async">
+      </app-drone-state-bar>
     </div>
   </div>
 

@@ -3,6 +3,7 @@ import { GlobalStateService } from '../global-state.service';
 import { Observable } from "rxjs";
 import { UnityEventsService } from "../main/services/unity-events.service";
 import { filter, map } from "rxjs/operators";
+import { GameService } from "../main/services/game.service";
 
 @Component({
   selector: 'app-simulator',
@@ -20,6 +21,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   constructor(private readonly elementRef: ElementRef,
               private readonly unityEvents: UnityEventsService,
+              private gameService: GameService,
               private readonly globalState: GlobalStateService) {
     this.connectionLost$ = this.unityEvents.events$.pipe(
       filter((event) => event.detail.type === 'signalLose'),
@@ -76,6 +78,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       alert(message);
     });
 
+    this.gameService.gameInProgress.next(true);
   }
 
   public ngOnDestroy() {
