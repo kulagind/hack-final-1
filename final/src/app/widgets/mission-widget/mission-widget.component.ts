@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TaskService} from "../../simulator/task.service";
 
 @Component({
   selector: 'app-mission-widget',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MissionWidgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(public taskService: TaskService) { }
 
   ngOnInit(): void {
   }

@@ -4,6 +4,7 @@ import { GlobalStateService } from '../../global-state.service';
 import { UnityEventsService } from '../../main/services/unity-events.service';
 import { fromEvent, interval, merge, Observable, of } from "rxjs";
 import { GameService } from "../../main/services/game.service";
+import {TaskService} from "../../simulator/task.service";
 
 @Component({
   selector: 'app-drone-state',
@@ -56,7 +57,9 @@ export class DroneStateComponent {
 
   constructor(public readonly globalState: GlobalStateService,
               public readonly gameService: GameService,
-              public readonly unityEventsService: UnityEventsService) {
+              public readonly unityEventsService: UnityEventsService,
+              public readonly taskService: TaskService,
+  ) {
   }
 
 }

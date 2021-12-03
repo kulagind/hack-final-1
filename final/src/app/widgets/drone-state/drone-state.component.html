@@ -2,11 +2,20 @@
 
   <div class="drone-value">
     <div class="drone-value__item">
-      <h3>{{ (height$ | async) ?? 0 }}</h3>
+      <h3>
+        Текущая задача:
+      </h3>
+      <div>{{taskService.currentTask | async}}</div>
+    </div>
+  </div>
+
+  <div class="drone-value">
+    <div class="drone-value__item">
+      <h3>{{ (height$ | async) ?? 0 }} М</h3>
       <div>Высота</div>
     </div>
     <div class="drone-value__item">
-      <h3>{{(speed$ | async) || 0}} KM</h3>
+      <h3>{{(speed$ | async) || 0}} KM/Ч</h3>
       <div>Скорость</div>
     </div>
   </div>

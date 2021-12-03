@@ -10,11 +10,16 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {LoginModule} from "./login/login.module";
 import {AuthGuard} from "./auth.guard";
 import {AdminComponent} from './admin/admin/admin.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
+import { TestComponent } from './tests/test/test.component';
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    AdminComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,10 @@ import {AdminComponent} from './admin/admin/admin.component';
     BrowserAnimationsModule,
     SimulatorModule,
     MatFormFieldModule,
-    LoginModule
+    LoginModule,
+    MatButtonModule,
+    MatTableModule,
+    MatRadioModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

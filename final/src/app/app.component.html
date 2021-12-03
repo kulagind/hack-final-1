@@ -1,7 +1,7 @@
 
 <router-outlet></router-outlet>
 
-<app-mission-widget class="widget"></app-mission-widget>
+<app-mission-widget *ngIf="(gameService.gameInProgress | async) && (taskService.completedTask | async)" class="widget"></app-mission-widget>
 
 <app-drone-state *ngIf="(gameService.gameInProgress | async)"></app-drone-state>
 

@@ -3,5 +3,8 @@
     <mat-icon class="icon">check</mat-icon>
   </div>
 
-  <p class="text">Задание выполнено!</p>
+  <div>
+    <p class="text">Задание выполнено!</p>
+    <p class="text">{{taskService.completedTask | async}}</p>
+  </div>
 </div>

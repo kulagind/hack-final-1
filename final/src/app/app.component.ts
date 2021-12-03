@@ -5,6 +5,7 @@ import { filter, map } from 'rxjs/operators';
 import { Observable } from "rxjs";
 import { GameService } from "./main/services/game.service";
 import { Router } from "@angular/router";
+import {TaskService} from "./simulator/task.service";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,9 @@ export class AppComponent {
   constructor(public readonly globalState: GlobalStateService,
               public gameService: GameService,
               private router: Router,
-              public readonly unityEvents: UnityEventsService) {
+              public readonly unityEvents: UnityEventsService,
+              public readonly taskService: TaskService,
+  ) {
 
     const connectionEvents = this.unityEvents.events$.pipe(
       map((event) => JSON.parse(event.detail)),

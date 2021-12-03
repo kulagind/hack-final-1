@@ -1,3 +1,15 @@
 <div class="container">
+  <div class="drone-description">
+    <h3 class="drone-description-headline">Панель администратора</h3>
+    <p class="drone-description-subtitle">Результаты проверки теоретических знаний и практических навыков</p>
 
+    <mat-table></mat-table>
+
+    <div class="margin">
+      <a class="button" mat-raised-button color="primary" (сlick)="getTests()">Теоретические знания</a>
+      <a class="button" mat-raised-button color="primary" (сlick)="getPractice()">Практические навыки</a>
+    </div>
+
+    <a class="button" mat-raised-button color="primary" (сlick)="saveResult()">Скачать рейтинг</a>
+  </div>
 </div>
