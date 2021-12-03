@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { UnityEventsService } from "../../services/unity-events.service";
 import { Observable } from "rxjs";
 import { LoginService } from "../../../login/login/login.service";
+import {SimulatorService} from "../../../simulator/simulator.service";
 
 @Component({
   selector: 'app-main',
@@ -21,7 +22,8 @@ export class MainComponent {
   constructor(
     private router: Router,
     private unityEventsService: UnityEventsService,
-    public login: LoginService
+    public login: LoginService,
+    private simulatorService: SimulatorService,
   ) {
     this.unityEvents$ = unityEventsService.events$;
   }
@@ -31,4 +33,7 @@ export class MainComponent {
     });
   }
 
+  setLearning(value: boolean) {
+    this.simulatorService.isLearning = value;
+  }
 }

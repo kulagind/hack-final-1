@@ -1,5 +1,11 @@
 <div class="drone-widgets">
 
+  <div class="drone-value" *ngIf="simulatorService.isLearning">
+    <div class="drone-value__item">
+      <a class="button" mat-raised-button color="primary" (click)="showKeyboard()">Показать управление</a>
+    </div>
+  </div>
+
   <div class="drone-value">
     <div class="drone-value__item">
       <h3>

@@ -8,8 +8,8 @@
     <p class="drone-description-subtitle">Система предполетного обучения</p>
 
     <a class="button" mat-raised-button color="primary" routerLink="../test">Теория</a>
-    <a class="button" mat-raised-button color="primary" routerLink="../simulator">Обучение</a>
-    <a class="button" mat-raised-button color="primary" routerLink="../simulator">Экзамен</a>
+    <a class="button" mat-raised-button color="primary" (click)="setLearning(true)" routerLink="../simulator">Обучение</a>
+    <a class="button" mat-raised-button color="primary" (click)="setLearning(false)" routerLink="../simulator">Экзамен</a>
   </div>
 </div>
 

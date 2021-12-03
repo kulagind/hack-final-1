@@ -5,6 +5,7 @@ import { UnityEventsService } from '../../main/services/unity-events.service';
 import { fromEvent, interval, merge, Observable, of } from "rxjs";
 import { GameService } from "../../main/services/game.service";
 import {TaskService} from "../../simulator/task.service";
+import {SimulatorService} from "../../simulator/simulator.service";
 
 @Component({
   selector: 'app-drone-state',
@@ -59,7 +60,11 @@ export class DroneStateComponent {
               public readonly gameService: GameService,
               public readonly unityEventsService: UnityEventsService,
               public readonly taskService: TaskService,
+              public readonly simulatorService: SimulatorService,
   ) {
   }
 
+  showKeyboard() {
+    this.simulatorService.showKeyboard();
+  }
 }

@@ -1,0 +1,39 @@
+@import "src/styles";
+
+.mission-widget {
+  position: relative;
+  display: flex;
+  width: max-content;
+  height: max-content;
+  align-items: center;
+  padding: 20px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(25px) saturate(80%);
+  border-radius: 10px;
+
+  @include body-1($on-surface-1);
+
+  img {
+    width: 900px;
+  }
+}
+
+.text {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #173C3C;
+  color: #00B3A6;
+  height: 100%;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.icon {
+  font-size: 24px;
+}
