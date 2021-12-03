@@ -1,13 +1,32 @@
 <div class="drone-widgets">
 
   <div class="drone-value">
-    <h6 class="drone-value-value">23M</h6>
-    <h6 class="drone-value-name">Height</h6>
+    <div class="drone-value__item">
+      <h3>31 MIN</h3>
+      <div>Time range</div>
+    </div>
+    <div class="drone-value__item">
+      <h3>45 KM</h3>
+      <div>Max speed</div>
+    </div>
   </div>
 
   <div class="drone-value">
-    <h6 class="drone-value-value">98%</h6>
-    <h6 class="drone-value-name">Power</h6>
+    <div class="drone-value__item">
+      <h3>
+        Power
+      </h3>
+      <app-drone-state-bar></app-drone-state-bar>
+    </div>
+  </div>
+
+  <div class="drone-value">
+    <div class="drone-value__item">
+      <h3>
+        Health
+      </h3>
+      <app-drone-state-bar [percentage]="70"></app-drone-state-bar>
+    </div>
   </div>
 
 </div>

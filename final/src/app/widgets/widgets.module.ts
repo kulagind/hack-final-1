@@ -4,6 +4,7 @@ import { MissionWidgetComponent } from './mission-widget/mission-widget.componen
 import { MatIconModule } from '@angular/material/icon';
 import { DroneStateComponent } from './drone-state/drone-state.component';
 import { PowerWidgetComponent } from './power-widget/power-widget.component';
+import { DroneStateBarComponent } from './drone-state-bar/drone-state-bar.component';
 
 
 
@@ -11,7 +12,8 @@ import { PowerWidgetComponent } from './power-widget/power-widget.component';
   declarations: [
     MissionWidgetComponent,
     DroneStateComponent,
-    PowerWidgetComponent
+    PowerWidgetComponent,
+    DroneStateBarComponent
   ],
   exports: [
     MissionWidgetComponent,

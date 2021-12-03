@@ -1,22 +1,31 @@
 @import "src/styles";
 
 .drone-widgets {
-  height: 190px;
-  width: 120px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px 81px;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(25px) saturate(80%);
   border-radius: 10px;
-
   @include body-1($on-surface-1);
 
 }
 
 .drone-value {
   margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  &__item {
+    flex: 1;
+  }
 
   &-value {
     @include subtitle-1($on-surface-1);

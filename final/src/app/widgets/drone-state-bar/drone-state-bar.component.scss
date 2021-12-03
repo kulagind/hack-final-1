@@ -1,0 +1,17 @@
+@import "src/styles";
+
+:host {
+  width: 100%;
+}
+
+.drone-state-bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+
+  &__fill {
+    background: $on-surface-1;
+    height: 100%;
+  }
+}
