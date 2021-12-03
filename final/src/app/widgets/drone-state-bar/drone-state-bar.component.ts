@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DroneStateBarComponent implements OnInit {
 
-  @Input() percentage = 50;
+  @Input() percentage: number | null = 50;
 
   constructor() { }
 
