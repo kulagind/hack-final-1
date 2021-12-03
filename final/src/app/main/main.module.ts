@@ -17,6 +17,9 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatCheckboxModule,
     RouterModule
+  ],
+  exports: [
+    DroneComponent,
   ]
 })
 export class MainModule {

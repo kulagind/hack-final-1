@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div class="container">
+  <div class="drone">
+    <app-drone></app-drone>
+  </div>
+
+  <mat-form-field class="example-full-width" appearance="fill" color="primary">
+    <mat-label>Имя пользователя</mat-label>
+    <input matInput [(ngModel)]="name">
+  </mat-form-field>
+
+  <div class="buttons">
+    <a mat-raised-button color="primary" (click)="login()">Войти</a>
+    <a mat-raised-button color="primary" [routerLink]="['/admin']">Войти как администратор</a>
+  </div>
+
+</div>

@@ -3,6 +3,7 @@ import { mainAppearanceLeftAnimation, mainAppearanceRightAnimation } from './mai
 import { Router } from "@angular/router";
 import { UnityEventsService } from "../../services/unity-events.service";
 import { Observable } from "rxjs";
+import {LoginService} from "../../../login/login/login.service";
 
 @Component({
   selector: 'app-main',
@@ -20,6 +21,7 @@ export class MainComponent {
   constructor(
     private router: Router,
     private unityEventsService: UnityEventsService,
+    public login: LoginService
   ) {
     this.unityEvents$ = unityEventsService.events$;
   }

@@ -1,24 +1,31 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainModule } from './main/main.module';
-import { WidgetsModule } from './widgets/widgets.module';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MainModule} from './main/main.module';
+import {WidgetsModule} from './widgets/widgets.module';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {LoginModule} from "./login/login.module";
+import {AuthGuard} from "./auth.guard";
+import { AdminComponent } from './admin/admin/admin.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     MainModule,
     AppRoutingModule,
     WidgetsModule,
-    BrowserAnimationsModule
+    LoginModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
