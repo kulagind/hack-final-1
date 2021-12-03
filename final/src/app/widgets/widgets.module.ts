@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DroneStateComponent } from './drone-state/drone-state.component';
 import { PowerWidgetComponent } from './power-widget/power-widget.component';
 import { DroneStateBarComponent } from './drone-state-bar/drone-state-bar.component';
+import { QuestWidgetComponent } from './quest-widget/quest-widget.component';
 
 
 
@@ -14,11 +15,13 @@ import { DroneStateBarComponent } from './drone-state-bar/drone-state-bar.compon
     DroneStateComponent,
     PowerWidgetComponent,
     DroneStateBarComponent
+    QuestWidgetComponent
   ],
   exports: [
     MissionWidgetComponent,
     DroneStateComponent,
-    PowerWidgetComponent
+    PowerWidgetComponent,
+    QuestWidgetComponent
   ],
   imports: [
     CommonModule,

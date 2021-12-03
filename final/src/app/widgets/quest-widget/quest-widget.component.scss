@@ -1,0 +1,12 @@
+@import "src/styles";
+
+.questions {
+  padding: 40px 20px;
+  width: 320px;
+  height: 320px;
+  border-radius: 5px;
+}
+
+.headline {
+  @include headline-6($on-surface-1);
+}

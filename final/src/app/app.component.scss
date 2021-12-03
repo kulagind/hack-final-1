@@ -17,12 +17,14 @@
   height: 90%;
   width: 250px;
   border-radius: 10px;
-  //background: rgba(0, 0, 0, 0.4);
-  //backdrop-filter: blur(25px) saturate(80%);
 }
 
 .widget {
   margin-bottom: 25px;
 }
 
-
+.quests {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
