@@ -1,0 +1,26 @@
+
+
+.state-widget {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.widgets-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 0;
+  top: 5%;
+  padding:  20px 20px;
+  height: 90%;
+  width: 250px;
+  border-radius: 10px;
+  //background: rgba(0, 0, 0, 0.4);
+  //backdrop-filter: blur(25px) saturate(80%);
+}
+
+.widget {
+  margin-bottom: 25px;
+}

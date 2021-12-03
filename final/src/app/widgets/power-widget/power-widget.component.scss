@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+.power-widget {
+  width: 100%;
+  height: 90px;
+  background: #1C1D21;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(25px) saturate(80%);
+}

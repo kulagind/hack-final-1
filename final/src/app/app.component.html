@@ -1,1 +1,14 @@
 <router-outlet></router-outlet>
+
+<!--<app-mission-widget class="widget"></app-mission-widget>-->
+
+<div class="widgets-panel" *ngIf="globalState.onPlay$ | async">
+  <!--  <app-drone-state class="state-widget"></app-drone-state>-->
+  <app-power-widget class="widget"></app-power-widget>
+
+  <app-power-widget class="widget"></app-power-widget>
+
+  <app-power-widget class="widget"></app-power-widget>
+
+
+</div>
