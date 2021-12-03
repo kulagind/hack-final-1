@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChildren } from '@angular/core';
 import { GlobalStateService } from '../global-state.service';
+import { Observable } from "rxjs";
+import { UnityEventsService } from "../main/services/unity-events.service";
+import { filter, map } from "rxjs/operators";
 
 @Component({
   selector: 'app-simulator',
@@ -12,8 +15,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private canvas: HTMLCanvasElement;
 
+
+  connectionLost$: Observable<number>;
+
   constructor(private readonly elementRef: ElementRef,
+              private readonly unityEvents: UnityEventsService,
               private readonly globalState: GlobalStateService) {
+    this.connectionLost$ = this.unityEvents.events$.pipe(
+      filter((event) => event.detail.type === 'signalLose'),
+      map((event) => event.detail.time),
+    );
+
+    this.connectionLost$.subscribe(console.log);
   }
 
   async ngOnInit() {

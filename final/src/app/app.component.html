@@ -4,6 +4,8 @@
 
 <app-drone-state></app-drone-state>
 
+<app-connection-lost-overlay *ngIf="connectionLost$ | async"></app-connection-lost-overlay>
+
 <!--<div class="widgets-panel" *ngIf="globalState.onPlay$ | async">-->
 
 
