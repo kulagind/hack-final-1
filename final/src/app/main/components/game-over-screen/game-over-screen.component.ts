@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from "../../services/game.service";
+import { take } from "rxjs/operators";
 
 @Component({
   selector: 'app-game-over-screen',
@@ -9,7 +10,7 @@ import { GameService } from "../../services/game.service";
 export class GameOverScreenComponent implements OnInit {
 
 
-  stats$ = this.gameService.stats$;
+  stats$ = this.gameService.stats$.pipe(take(1));
 
   constructor(
     private gameService: GameService,

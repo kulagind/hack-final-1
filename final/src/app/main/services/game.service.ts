@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, fromEvent, merge, Observable, of } from "rxjs";
+import { BehaviorSubject, combineLatest, fromEvent, interval, merge, Observable, of } from "rxjs";
 import { UnityEventsService } from "./unity-events.service";
 import { count, debounceTime, filter, map, mapTo, startWith, take, tap, throttle, throttleTime } from "rxjs/operators";
 
@@ -33,6 +33,10 @@ export class GameService {
   });
   gameInProgress = new BehaviorSubject(false);
   gameStarted: any;
+
+  battery$ = interval(1000).pipe(
+    map(v => 100 - v)
+  );
 
   constructor(
     private unityEvents: UnityEventsService,
@@ -109,6 +113,15 @@ export class GameService {
         filter((hp) => hp <= 15),
         mapTo(false),
         take(1),
+      ),
+      this.unityEvents.parsedEvents$.pipe(
+        filter((detail) => detail.type === 'death'),
+        mapTo(false),
+        take(1),
+      ),
+      this.battery$.pipe(
+        filter((number) => number <= 1),
+        mapTo(false),
       ),
       fromEvent(document, "keydown").pipe(
         // @ts-ignore
