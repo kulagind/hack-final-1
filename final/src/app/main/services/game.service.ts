@@ -1,7 +1,21 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest, fromEvent, interval, merge, Observable, of } from "rxjs";
 import { UnityEventsService } from "./unity-events.service";
-import { count, debounceTime, filter, map, mapTo, startWith, take, tap, throttle, throttleTime } from "rxjs/operators";
+import {
+  count,
+  debounceTime,
+  filter,
+  map,
+  mapTo,
+  startWith,
+  switchMap,
+  take,
+  tap,
+  throttle,
+  throttleTime
+} from "rxjs/operators";
+import { StatsRepositoryService } from "./stats-repository.service";
+import { LoginService } from "../../login/login/login.service";
 
 export interface GameStats {
   max_speed: number;
@@ -40,6 +54,8 @@ export class GameService {
 
   constructor(
     private unityEvents: UnityEventsService,
+    private statsRepo: StatsRepositoryService,
+    private login: LoginService
   ) {
 
     let hits = 0;
@@ -139,8 +155,15 @@ export class GameService {
           points: Math.random() * 100,
           time: performance.now() - this.gameStarted,
         })
+      }),
+      tap(() => {
+        this.sendReport(this.stats$.getValue()).subscribe();
       })
     );
 
+  }
+
+  sendReport(stats: GameStats): Observable<any> {
+    return this.statsRepo.sendStats(stats, this.login.user?.guid || "");
   }
 }
