@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from "../../services/game.service";
-import { take } from "rxjs/operators";
+import { take, tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-game-over-screen',
@@ -17,6 +17,7 @@ export class GameOverScreenComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
   handleRestart(): void {
@@ -24,7 +25,7 @@ export class GameOverScreenComponent implements OnInit {
   }
 
   handleMainPage(): void {
-    window.location.href = window.location.origin;
+    window.location.href = window.location.origin + '/main';
   }
 
 }
