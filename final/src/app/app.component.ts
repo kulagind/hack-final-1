@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GlobalStateService } from './global-state.service';
 import { UnityEventsService } from './main/services/unity-events.service';
 import { filter, map } from 'rxjs/operators';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,20 @@ import { filter, map } from 'rxjs/operators';
 export class AppComponent {
   title = 'final';
 
-  public height$ = this.unityEventsService.events$
-    .pipe(
-      map(v => JSON.parse(v.detail)),
-      filter(v => v.type === 'params')
-    )
+  connectionLost$: Observable<number>;
 
   constructor(public readonly globalState: GlobalStateService,
-              public readonly unityEventsService: UnityEventsService) {
+              public readonly unityEvents: UnityEventsService) {
+
+    const connectionEvents = this.unityEvents.events$.pipe(
+      map((event) => JSON.parse(event.detail)),
+      filter((detail) => ['signalLose', 'gotSignal'].includes(detail.type))
+    );
+
+    this.connectionLost$ = connectionEvents.pipe(
+      map((event) => event.time),
+    );
+
+    this.connectionLost$.subscribe();
   }
 }
