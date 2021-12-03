@@ -31,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/build/TemplateData/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/build/Build/dest.loader.js"
+            ]
           },
           "configurations": {
             "production": {

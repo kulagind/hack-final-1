@@ -53,11 +53,11 @@ export class PracticePageComponent implements AfterViewInit {
   }
 
   renderSkull(): void {
-    this.loader.load('assets/skull/scene.gltf', (scene) => {
+    this.loader.load('assets/skull/scene.gltf', (scene: { scene: { children: any[]; }; }) => {
       this.model = scene.scene.children[0];
       this.camera.position.z = 5;
-      this.scene.add(this.model);
-    }, undefined, (error) => {
+      this.scene.add(this.model as any);
+    }, undefined, (error: any) => {
       console.log(error);
     });
   }

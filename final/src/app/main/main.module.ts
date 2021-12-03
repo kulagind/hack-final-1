@@ -4,6 +4,7 @@ import { MainComponent } from './components/main/main.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DroneComponent } from './components/drone/drone.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DroneComponent } from './components/drone/drone.component';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    RouterModule
   ]
 })
 export class MainModule {
