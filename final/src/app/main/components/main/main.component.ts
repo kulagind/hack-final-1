@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { mainAppearanceLeftAnimation, mainAppearanceRightAnimation } from './main.animation';
 import { Router } from "@angular/router";
+import { UnityEventsService } from "../../services/unity-events.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-main',
@@ -13,9 +15,13 @@ import { Router } from "@angular/router";
 })
 export class MainComponent {
 
+  unityEvents$: Observable<any>;
+
   constructor(
-    private router: Router
+    private router: Router,
+    private unityEventsService: UnityEventsService,
   ) {
+    this.unityEvents$ = unityEventsService.events$;
   }
 
   handleStart(): void {
