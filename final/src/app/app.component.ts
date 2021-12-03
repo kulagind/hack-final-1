@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { GlobalStateService } from './global-state.service';
+import { UnityEventsService } from './main/services/unity-events.service';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,13 @@ import { GlobalStateService } from './global-state.service';
 export class AppComponent {
   title = 'final';
 
-  constructor(public readonly globalState: GlobalStateService) {
+  public height$ = this.unityEventsService.events$
+    .pipe(
+      map(v => JSON.parse(v.detail)),
+      filter(v => v.type === 'params')
+    )
+
+  constructor(public readonly globalState: GlobalStateService,
+              public readonly unityEventsService: UnityEventsService) {
   }
 }

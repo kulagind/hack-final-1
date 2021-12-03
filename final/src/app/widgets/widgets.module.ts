@@ -14,7 +14,7 @@ import { QuestWidgetComponent } from './quest-widget/quest-widget.component';
     MissionWidgetComponent,
     DroneStateComponent,
     PowerWidgetComponent,
-    DroneStateBarComponent
+    DroneStateBarComponent,
     QuestWidgetComponent
   ],
   exports: [
