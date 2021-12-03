@@ -1,18 +1,15 @@
 <div class="text">
 
-  <span class="logo" @main-text-appear-left>Surface</span>
+  <span class="logo" @main-text-appear-left>Typhoon H</span>
 
 
   <div class="drone-description" @main-text-appear-left>
-    <h3 class="drone-description-headline">MAVIC 2</h3>
-    <p class="drone-description-subtitle">See the bigger uin picture</p>
+    <h3 class="drone-description-headline">Беркут</h3>
+    <p class="drone-description-subtitle">Система предполетного обучения</p>
 
-    <p class="drone-description-body">
-      Lörem ipsum skogsbad taliban-tv. Jöjäd prepor att lalogi semin.
-      Mähuv kageburade debask den fökyrade pseudona. Syvis disera: sussade sevire
-    </p>
-
-    <a mat-raised-button color="primary" routerLink="../simulator">Начать</a>
+    <a class="button" mat-raised-button color="primary" routerLink="../test">Теория</a>
+    <a class="button" mat-raised-button color="primary" routerLink="../simulator">Обучение</a>
+    <a class="button" mat-raised-button color="primary" routerLink="../simulator">Экзамен</a>
   </div>
 </div>
 
@@ -27,13 +24,13 @@
 
     <div @main-text-appear-right>
       <p class="secondary-information-subtitle">
-        Obstacel seensing
-        3-axis gimbal technology
+        Пользователь: {{login.user!.name}}
+
+        <a class="logout" mat-raised-button color="primary" (click)="login.logout()">Выйти</a>
       </p>
 
       <p class="secondary-information-subtitle">
-        Haselblad camera
-        20 MP 1” CMOS Sensor
+        Результат: {{login.user!.result || 0}}
       </p>
     </div>
 

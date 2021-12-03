@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="drone-widgets">
 
   <div class="drone-value">
@@ -31,3 +32,37 @@
   </div>
 
 </div>
+=======
+<div class="drone-widgets">
+
+  <div class="drone-value">
+    <div class="drone-value__item">
+      <h3>{{ (height$ | async) ?? 0 }}</h3>
+      <div>Высота</div>
+    </div>
+    <div class="drone-value__item">
+      <h3>{{(speed$ | async) || 0}} KM</h3>
+      <div>Max speed</div>
+    </div>
+  </div>
+
+  <div class="drone-value">
+    <div class="drone-value__item">
+      <h3>
+        Power
+      </h3>
+      <app-drone-state-bar [percentage]="power$ | async"></app-drone-state-bar>
+    </div>
+  </div>
+
+  <div class="drone-value">
+    <div class="drone-value__item">
+      <h3>
+        Health
+      </h3>
+      <app-drone-state-bar [percentage]="50"></app-drone-state-bar>
+    </div>
+  </div>
+
+</div>
+>>>>>>> 4b6b27567017f06094471faf77be1c4bf4383e41

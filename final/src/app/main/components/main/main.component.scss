@@ -63,7 +63,7 @@
 
   &-subtitle {
     width: 100%;
-    @include body-2($on-surface-3);
+    @include body-2($on-surface-1);
     margin-bottom: 35px;
 
   }
@@ -91,4 +91,12 @@
   letter-spacing: -0.133333px;
   color: rgba(255, 255, 255, 0.87);
 
+}
+
+.button {
+  margin-right: 20px;
+}
+
+.logout {
+  margin-left: 20px;
 }

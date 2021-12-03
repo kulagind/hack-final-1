@@ -1,17 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  distinctUntilChanged,
-  endWith,
-  filter,
-  finalize,
-  map,
-  mapTo,
-  pluck,
-  startWith,
-  switchMap,
-  takeUntil,
-  tap
-} from 'rxjs/operators';
+import { Component } from '@angular/core';
+import { filter, map, mapTo, pluck, switchMap, tap } from 'rxjs/operators';
 import { GlobalStateService } from '../../global-state.service';
 import { UnityEventsService } from '../../main/services/unity-events.service';
 import { fromEvent, interval, merge, Observable, of } from "rxjs";
