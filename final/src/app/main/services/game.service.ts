@@ -61,7 +61,7 @@ export class GameService {
 
     this.battery$ = this.gameInProgress.pipe(
       filter(v => v),
-      switchMap(() => interval(1000)),
+      switchMap(() => interval(2000)),
       map(v => 100 - v)
     );
 
