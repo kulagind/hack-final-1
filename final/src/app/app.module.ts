@@ -14,12 +14,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
 import { TestComponent } from './tests/test/test.component';
 import {MatRadioModule} from "@angular/material/radio";
+import {ReactiveFormsModule} from "@angular/forms";
+import { ResultComponent } from './tests/result/result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    TestComponent
+    TestComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import {MatRadioModule} from "@angular/material/radio";
     MatButtonModule,
     MatTableModule,
     MatRadioModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
