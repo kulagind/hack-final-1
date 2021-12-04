@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, fromEvent, interval, merge, Observable, of } from "rxjs";
+import { BehaviorSubject, combineLatest, fromEvent, interval, merge, Observable, of, pipe } from "rxjs";
 import { UnityEventsService } from "./unity-events.service";
 import {
   count,
@@ -48,9 +48,7 @@ export class GameService {
   gameInProgress = new BehaviorSubject(false);
   gameStarted: any;
 
-  battery$ = interval(1000).pipe(
-    map(v => 100 - v)
-  );
+  battery$: Observable<number>;
 
   constructor(
     private unityEvents: UnityEventsService,
@@ -60,6 +58,12 @@ export class GameService {
 
     let hits = 0;
     const parsedEvents = this.unityEvents.parsedEvents$;
+
+    this.battery$ = this.gameInProgress.pipe(
+      filter(v => v),
+      switchMap(() => interval(1000)),
+      map(v => 100 - v)
+    );
 
     this.gameInProgress.subscribe((value) => {
       if (value) {

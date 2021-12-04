@@ -14,26 +14,30 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
 import { TestComponent } from './tests/test/test.component';
 import {MatRadioModule} from "@angular/material/radio";
+import { StatisticsComponent } from './admin/statistics/statistics.component';
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    TestComponent
+    TestComponent,
+    StatisticsComponent
   ],
-  imports: [
-    BrowserModule,
-    MainModule,
-    AppRoutingModule,
-    WidgetsModule,
-    BrowserAnimationsModule,
-    SimulatorModule,
-    MatFormFieldModule,
-    LoginModule,
-    MatButtonModule,
-    MatTableModule,
-    MatRadioModule,
-  ],
+    imports: [
+        BrowserModule,
+        MainModule,
+        AppRoutingModule,
+        WidgetsModule,
+        BrowserAnimationsModule,
+        SimulatorModule,
+        MatFormFieldModule,
+        LoginModule,
+        MatButtonModule,
+        MatTableModule,
+        MatRadioModule,
+        MatIconModule,
+    ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })

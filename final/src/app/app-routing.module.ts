@@ -7,6 +7,7 @@ import {AuthGuard} from "./auth.guard";
 import {AdminComponent} from "./admin/admin/admin.component";
 import { GameOverScreenComponent } from "./main/components/game-over-screen/game-over-screen.component";
 import {TestComponent} from "./tests/test/test.component";
+import { StatisticsComponent } from "./admin/statistics/statistics.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'main', component: MainComponent, canActivate: [AuthGuard] },
   { path: 'simulator', component: SimulatorComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent },
+  { path: 'admin/stats', component: StatisticsComponent },
   { path: 'simulation-complete', component: GameOverScreenComponent },
   { path: 'test', component: TestComponent, canActivate: [AuthGuard] },
   {
