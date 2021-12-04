@@ -8,6 +8,7 @@ import {AdminComponent} from "./admin/admin/admin.component";
 import { GameOverScreenComponent } from "./main/components/game-over-screen/game-over-screen.component";
 import {TestComponent} from "./tests/test/test.component";
 import { StatisticsComponent } from "./admin/statistics/statistics.component";
+import {ResultComponent} from "./tests/result/result/result.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'admin/stats', component: StatisticsComponent },
   { path: 'simulation-complete', component: GameOverScreenComponent },
   { path: 'test', component: TestComponent, canActivate: [AuthGuard] },
+  { path: 'result/:score', component: ResultComponent, canActivate: [AuthGuard] },
   {
     path: 'practice',
     loadChildren: () => import('./practice/practice.module').then(({ PracticeModule }) => PracticeModule),

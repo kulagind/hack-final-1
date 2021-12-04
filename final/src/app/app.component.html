@@ -5,6 +5,8 @@
 
 <app-drone-state *ngIf="(gameService.gameInProgress | async)"></app-drone-state>
 
+<app-keyboard *ngIf="simulatorService.isKeyboardShown | async" class="keyboard"></app-keyboard>
+
 <app-connection-lost-overlay *ngIf="(connectionLost$ | async) && (gameService.gameInProgress | async)"></app-connection-lost-overlay>
 
 <!--<div class="widgets-panel" *ngIf="globalState.onPlay$ | async">-->

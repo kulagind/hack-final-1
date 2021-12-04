@@ -16,28 +16,32 @@ import { TestComponent } from './tests/test/test.component';
 import {MatRadioModule} from "@angular/material/radio";
 import { StatisticsComponent } from './admin/statistics/statistics.component';
 import { MatIconModule } from "@angular/material/icon";
+import {ReactiveFormsModule} from "@angular/forms";
+import { ResultComponent } from './tests/result/result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     TestComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    ResultComponent
   ],
-    imports: [
-        BrowserModule,
-        MainModule,
-        AppRoutingModule,
-        WidgetsModule,
-        BrowserAnimationsModule,
-        SimulatorModule,
-        MatFormFieldModule,
-        LoginModule,
-        MatButtonModule,
-        MatTableModule,
-        MatRadioModule,
-        MatIconModule,
-    ],
+  imports: [
+    BrowserModule,
+    MainModule,
+    AppRoutingModule,
+    WidgetsModule,
+    BrowserAnimationsModule,
+    SimulatorModule,
+    MatFormFieldModule,
+    LoginModule,
+    MatButtonModule,
+    MatTableModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatIconModule,
+  ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })

@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 import { GameService } from "./main/services/game.service";
 import { Router } from "@angular/router";
 import {TaskService} from "./simulator/task.service";
+import {SimulatorService} from "./simulator/simulator.service";
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ export class AppComponent {
               private router: Router,
               public readonly unityEvents: UnityEventsService,
               public readonly taskService: TaskService,
+              public simulatorService: SimulatorService,
   ) {
 
     const connectionEvents = this.unityEvents.events$.pipe(
